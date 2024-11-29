@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(5,5,5);
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.image-1 {
+    background-image: url(https://wallpapercave.com/wp/wp4582618.jpg);
+}
+.image-2 {
+    background-image: url(https://wallpapercave.com/wp/wp9691567.jpg);
+}
+.image-3 {
+    background-image: url(https://wallpapercave.com/wp/wp5132231.jpg);
+}
+.image-4 {
+    background-image: url(https://wallpapercave.com/wp/wp12373494.png);
+}
+.image-5 {
+    background-image: url(https://wallpapercave.com/uwp/uwp4540739.webp);
+}
+
+.slide {
+    position: relative;
+    height: 80vh;
+    flex: 0.5;
+    border-radius: 50px;
+    color: #fff;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.4s ease-in;
+}
+
+@media (max-width:480px){
+    .slide:nth-of-type(4), .slide:nth-of-type(5) {
+        display: none;
+    }
+}
+
+.slide h3 {
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+    margin: 0;
+    opacity: 0;
+    font-size: 70px;
+    font-family: "Protest Revolution",sans-serif;
+    font-weight: 500;
+    transition: font-size 0.5s ease;
+}
+
+/* javascript */
+.slide.active {
+    flex: 5;
+}
+
+.slide.active h3{
+    opacity: 1;
+    transform: translateY(37px);
+    transition: opacity 0.3s ease-in;
+    transition: transform 0.5s ease-out;
+}
